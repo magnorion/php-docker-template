@@ -1,0 +1,5 @@
+app/*
+!app/.gitkeep
+
+config/data/*
+!config/data/.gitkeep
