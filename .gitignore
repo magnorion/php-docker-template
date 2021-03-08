@@ -1,5 +1,6 @@
 app/*
 !app/.gitkeep
+wordpress
 
 config/data/*
 !config/data/.gitkeep
