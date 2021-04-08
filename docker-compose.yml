@@ -8,8 +8,8 @@ services:
       - 3000:80
     environment:
       WORDPRESS_DB_HOST: db
-      WORDPRESS_DB_USER: root
-      WORDPRESS_DB_PASSWORD: root
+      WORDPRESS_DB_USER: magno
+      WORDPRESS_DB_PASSWORD: magno
       WORDPRESS_DB_NAME: wordpress
     volumes:
       - './wordpress:/var/www/html'
@@ -17,12 +17,13 @@ services:
   db:
     image: 'mysql:latest'
     command: --default-authentication-plugin=mysql_native_password
+    restart: always
     ports:
       - '5000:3306'
     volumes:
       - './config/data:/var/lib/mysql:rw'
     environment:
-      - MYSQL_DATABASE=app
+      - MYSQL_DATABASE=wordpress
       - MYSQL_USER=magno
       - MYSQL_PASSWORD=magno
       - MYSQL_ROOT_PASSWORD=root
@@ -36,3 +37,4 @@ services:
 
 volumes:
   wordpress:
+  db:
